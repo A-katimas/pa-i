@@ -6,16 +6,13 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:30:06 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/11/19 19:57:36 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/12/01 15:46:31 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 #include <stdio.h>
-
-int		inhexa(unsigned long n, int i);
-int		cfekoi(char c, va_list varg);
 
 int	ft_printf(const char *str, ...)
 {
@@ -33,7 +30,7 @@ int	ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			i++;
-			result += cfekoi(str[i], var) + 1;
+			result += put_distrib(str[i], var) + 1;
 		}
 		else
 			result += write(1, &str[i], 1);
@@ -69,7 +66,7 @@ int	inhexa(unsigned long n, int i)
 	}
 }
 
-int	cfekoi(char c, va_list var)
+int	put_distrib(char c, va_list var)
 {
 	size_t	i;
 
