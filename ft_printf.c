@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:30:06 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/12/01 15:46:31 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/12/01 16:01:00 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,26 +40,26 @@ int	ft_printf(const char *str, ...)
 	return (result);
 }
 
-int	inhexa(unsigned long n, int i)
+int	inhexa(unsigned long n, int type)
 {
 	static int	base;
 	char		c;
 
 	base = 0;
-	if (i == 2)
+	if (type == 2)
 	{
 		if (n >= 10)
-			inhexa(n / 10, i);
-		c = HEXMIN[n % 10];
+			inhexa(n / 10, type);
+		c = HEXLOW[n % 10];
 		write(1, &c, 1);
 		return (base += 1);
 	}
 	else
 	{
 		if (n >= 16)
-			inhexa(n / 16, i);
-		c = HEXMIN[n % 16];
-		if (i == 1)
+			inhexa(n / 16, type);
+		c = HEXLOW[n % 16];
+		if (type == 1)
 			c = ft_toupper(c);
 		write(1, &c, 1);
 		return (base += 1);

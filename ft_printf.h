@@ -6,7 +6,7 @@
 /*   By: jtardieu <jtardieu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:23:25 by jtardieu          #+#    #+#             */
-/*   Updated: 2025/12/01 15:46:28 by jtardieu         ###   ########.fr       */
+/*   Updated: 2025/12/01 15:59:17 by jtardieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdarg.h>
 # include "libft/libft.h"
 
-# define HEXMIN "0123456789abcdef"
+# define HEXLOW "0123456789abcdef"
 
 int	ft_printf(const char *str, ...);
 int	inhexa(unsigned long n, int i);
